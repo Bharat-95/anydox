@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const Header = () => {
   return (
-    <div className=' flex justify-between bg-black text-white items-center px-10'>
+    <div className=' flex justify-between fixed top-0 left-0 w-full z-50 text-white items-center px-10'>
         <div>
             <Image src="/Logo.png" alt='No Logo Found' width={100} height={100} className='w-40'/>
         </div>
