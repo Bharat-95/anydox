@@ -1,54 +1,83 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+
+const servicesData = [
+  {
+    title: "Data-Driven Governance",
+    description:
+      "Leverage actionable insights to align IT operations with business objectives, reduce organizational risk, and meet compliance standards.",
+  },
+  {
+    title: "Enterprise Storage Intelligence",
+    description:
+      "Use enterprise-wide data insights to cut costs, modernize backups, optimize storage tiers, and save resources.",
+  },
+  {
+    title: "Data Security Posture",
+    description:
+      "Unknown sensitive data poses risks that weaken your entire security posture. We help you find and fix it.",
+  },
+  {
+    title: "Secure Cloud Migrations",
+    description:
+      "Break down compliance and data risk barriers to accelerate secure cloud adoption with improved efficiency.",
+  },
+  {
+    title: "AI Data Enablement",
+    description:
+      "Improve AI accuracy, reduce risk, and cut processing costs with smarter data foundations and deep insights.",
+  },
+];
 
 const Services = () => {
-  const servicesData = [
-    {
-      title: "Data-Driven Governance",
-      description:
-        "Leverage actionable insights to align IT operations with business objectives, reduce organizational risk, and meet regulatory and industry compliance standards. Gain clear visibility into where sensitive or regulated data resides—so you can protect it with purpose and precision.",
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const [sliderRef] = useKeenSlider({
+    loop: true,
+    slides: {
+      perView: 3,
+      spacing: 20,
     },
-    {
-      title: "Enterprise Storage Intelligence",
-      description:
-        "Leverage enterprise-wide data insights to cut costs, simplify migrations, modernize backups, optimize storage tiers, and enhance your security posture—all while saving time and resources.",
+    slideChanged(slider) {
+      setCurrentSlide(slider.track.details.rel);
     },
-    {
-      title: "Data Security Posture",
-      description:
-        "In today’s threat-filled landscape, unstructured data is often the silent vulnerability. Security and compliance leaders constantly face the challenge of unknown sensitive data slipping through the cracks—posing risks that can weaken the entire security posture.",
+    created(slider) {
+      setInterval(() => slider.next(), 5000);
     },
-    {
-      title: "Secure Cloud Migrations",
-      description:
-        "Break down compliance and data risk barriers to accelerate secure cloud adoption. Maximize the value of your migration with improved efficiency, reduced costs, and stronger regulatory alignment.",
-    },
-      {
-      title: "Data-Driven AI Enablement",
-      description:
-        "Unlock the full potential of AI with deep insights into your data—its age, access patterns, risk level, and ROT (Redundant, Obsolete, Trivial). Improve accuracy, reduce risk, and cut AI processing costs with smarter data foundations.",
-    },
-  ];
+  });
 
   return (
-    <div className="text-white flex flex-col items-center my-10 px-4">
-      <div className="text-2xl text-center border w-full md:w-[70%] p-5 rounded-md shadow-xl leading-relaxed mb-10">
+    <div className="bg-white text-blue-900 py-16 px-4 overflow-visible">
+      <div className="text-2xl text-center font-semibold w-full md:w-[70%] mx-auto mb-10 leading-relaxed">
         Unlock the Full Potential of Your Organization with Unstructured Data
-        <p className="text-xl mt-2">
+        <p className="text-xl mt-2 font-normal">
           Efficiently Discover, Classify, and Remediate Hidden Information
         </p>
       </div>
-      <div className="w-full overflow-x-auto snap-x snap-mandatory scrollbar-hidden">
-        <div className="flex flex-nowrap gap-6 py-10">
-          {servicesData.map((service, index) => (
+
+      {/* This wrapper must allow upward overflow */}
+      <div ref={sliderRef} className="keen-slider overflow-visible pt-20">
+        {servicesData.map((service, idx) => {
+          const isCenter =
+            (idx + servicesData.length - currentSlide) % servicesData.length === 1;
+
+          return (
             <div
-              key={index}
-              className="flex-none w-[30%] min-w-[250px] h-80 flex flex-col items-center space-y-4 border p-5 rounded-md shadow-xl snap-start hover:translate-x-1 hover:-translate-y-1 duration-500 hover:bg-slate-900"
+              key={idx}
+              className={`keen-slider__slide transition-all duration-500 rounded-xl px-6 py-8 flex flex-col gap-y-2 h-[380px] ${
+                isCenter
+                  ? "bg-slate-900 text-white h-[450px] mt-[-40px]  z-10"
+                  : "bg-gray-100 text-blue-900"
+              }`}
             >
-              <div className="text-xl font-semibold">{service.title}</div>
-              <p className="leading-relaxed text-lg">{service.description}</p>
+              <div className="text-2xl font-bold">{service.title}</div>
+              <p className="text-lg leading-relaxed">{service.description}</p>
             </div>
-          ))}
-        </div>
+          );
+        })}
       </div>
     </div>
   );

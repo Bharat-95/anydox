@@ -1,10 +1,9 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 
 const words = ["Traceable ...", "Compliant ...", "Resilient Supply Chains ..."];
 
-const Page = () => {
+const Hero = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [typedText, setTypedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -30,34 +29,34 @@ const Page = () => {
   }, [typedText, isDeleting, currentWordIndex]);
 
   return (
-    <div className="relative lg:h-[90vh] md:h-[60vh] h-[60vh] w-full">
+    <div className="relative z-[1] lg:h-[90vh] h-[70vh] w-full overflow-hidden">
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+        className="fixed top-0 left-0 w-full h-full object-cover z-[-10]"
       >
         <source src="/Bg.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
-      <div className="relative z-10 flex flex-col lg:items-start  lg:justify-center md:justify-center justify-center md:items-center items-center h-full text-white text-center lg:pl-40 md:pl-10">
-        <h1 className="lg:text-6xl md:text-5xl font-bold mb-4 drop-shadow-[2px_2px_4px_rgba(0,0,0,0.7)]">
-          Real-time visibility for
-        </h1>
-        <h2 className="lg:text-4xl md:text-4xl font-semibold tracking-wide drop-shadow-[2px_2px_4px_rgba(0,0,0,0.7)]">
-          <span className="border-r-2 border-white text-yellow-500 pr-1">
-            {typedText}
-          </span>
-        </h2>
+      <div className="relative z-[1] w-full">
+        <div className="h-[90vh] flex flex-col items-start pl-20 justify-center text-white text-center px-4">
+          <h1 className="lg:text-6xl text-4xl font-bold mb-4 drop-shadow-lg">
+            Real-time visibility for
+          </h1>
+          <h2 className="lg:text-4xl text-2xl font-semibold tracking-wide text-yellow-400 drop-shadow">
+            <span className="border-r-2 border-white pr-1">{typedText}</span>
+          </h2>
 
-        <div className="text-white border lg:text-2xl md:text-xl text-lg font-semibold mt-10 rounded-3xl p-3 hover:translate-x-1 hover:-translate-y-1 duration-500 hover:bg-yellow-600 drop-shadow-[2px_2px_4px_rgba(0,0,0,0.7)]">
-          Talk To Us
+          <div className="mt-10 border px-6 py-3 rounded-3xl font-semibold text-lg hover:bg-yellow-600 transition-all">
+            Talk To Us
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default Page;
+export default Hero;

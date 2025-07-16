@@ -14,11 +14,11 @@ const integrations = [
 
 export default function IntegrationsSection() {
   return (
-    <section className="py-24 bg-white text-center relative overflow-hidden">
-      <h2 className="text-3xl font-bold text-gray-900 mb-4 relative z-10">
+    <section className="py-24 bg-slate-900 text-center relative overflow-hidden">
+      <h2 className="text-3xl font-bold text-white mb-4 relative z-10">
         We Integrate With Your Favorite Apps
       </h2>
-      <button className="relative z-10 border border-black rounded-full px-6 py-2 font-semibold text-sm hover:bg-black hover:text-white transition">
+      <button className="relative z-10 border bg-white border-white rounded-full px-6 py-2 font-semibold text-sm hover:bg-white hover:text-blue-900 transition">
         Contact Us for a List of Integrations
       </button>
 
