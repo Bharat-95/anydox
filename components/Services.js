@@ -37,9 +37,17 @@ const Services = () => {
 
   const [sliderRef] = useKeenSlider({
     loop: true,
+    breakpoints: {
+      "(min-width: 768px)": {
+        slides: { perView: 2, spacing: 16 },
+      },
+      "(min-width: 1024px)": {
+        slides: { perView: 3, spacing: 30 },
+      },
+    },
     slides: {
-      perView: 3,
-      spacing: 20,
+      perView: 1,
+      spacing: 12,
     },
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel);
@@ -58,7 +66,6 @@ const Services = () => {
         </p>
       </div>
 
-      {/* This wrapper must allow upward overflow */}
       <div ref={sliderRef} className="keen-slider overflow-visible pt-20">
         {servicesData.map((service, idx) => {
           const isCenter =
@@ -67,14 +74,14 @@ const Services = () => {
           return (
             <div
               key={idx}
-              className={`keen-slider__slide transition-all duration-500 rounded-xl px-6 py-8 flex flex-col gap-y-2 h-[380px] ${
+              className={`keen-slider__slide transition-all duration-500 rounded-xl px-4 py-6 flex flex-col gap-y-10 h-[360px] ${
                 isCenter
-                  ? "bg-slate-900 text-white h-[450px] mt-[-40px]  z-10"
+                  ? "bg-slate-900 text-white h-[420px] mt-[-40px] z-10"
                   : "bg-gray-100 text-blue-900"
               }`}
             >
-              <div className="text-2xl font-bold">{service.title}</div>
-              <p className="text-lg leading-relaxed">{service.description}</p>
+              <div className="text-xl font-bold">{service.title}</div>
+              <p className="text-base leading-relaxed">{service.description}</p>
             </div>
           );
         })}

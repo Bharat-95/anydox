@@ -29,7 +29,7 @@ const Hero = () => {
   }, [typedText, isDeleting, currentWordIndex]);
 
   return (
-    <div className="relative z-[1] lg:h-[90vh] h-[70vh] w-full overflow-hidden">
+    <div className="relative z-[1] lg:h-[90vh] md:h-[80vh] h-[50vh] w-full overflow-hidden">
       <video
         autoPlay
         loop
@@ -42,15 +42,15 @@ const Hero = () => {
       </video>
 
       <div className="relative z-[1] w-full">
-        <div className="h-[90vh] flex flex-col items-start pl-20 justify-center text-white text-center px-4">
-          <h1 className="lg:text-6xl text-4xl font-bold mb-4 drop-shadow-lg">
+        <div className="lg:h-[90vh] md:h-[80vh] h-[70vh] flex flex-col items-start lg:pl-20 md:pl-12 pl-6 justify-center text-white text-center px-4">
+          <h1 className="lg:text-6xl md:text-5xl text-4xl font-bold mb-4 drop-shadow-lg text-left">
             Real-time visibility for
           </h1>
-          <h2 className="lg:text-4xl text-2xl font-semibold tracking-wide text-yellow-400 drop-shadow">
+          <h2 className="lg:text-4xl md:text-3xl text-2xl font-semibold tracking-wide text-yellow-400 drop-shadow text-left">
             <span className="border-r-2 border-white pr-1">{typedText}</span>
           </h2>
 
-          <div className="mt-10 border px-6 py-3 rounded-3xl font-semibold text-lg hover:bg-yellow-600 transition-all">
+          <div className="mt-10 border px-6 py-3 rounded-3xl font-semibold text-lg hover:bg-yellow-600 transition-all cursor-pointer">
             Talk To Us
           </div>
         </div>
