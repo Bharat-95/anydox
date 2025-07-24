@@ -18,7 +18,7 @@ export default function IntegrationsSection() {
       <h2 className="text-3xl font-bold text-white mb-6">
         We Integrate With Your Favorite Apps
       </h2>
-      <button className="border bg-white border-white rounded-full px-6 py-2 font-semibold text-sm hover:bg-white hover:text-blue-900 transition mb-10">
+      <button className="border bg-white border-white rounded-full px-6 py-2 font-semibold text-sm text-black hover:bg-white hover:text-blue-900 transition mb-10">
         Contact Us for a List of Integrations
       </button>
 
