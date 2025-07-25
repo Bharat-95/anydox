@@ -43,9 +43,6 @@ export default function Resources() {
           ))}
         </div>
       </div>
-      <div>
-        <IntegrationsSection />
-      </div>
     </div>
   );
 }

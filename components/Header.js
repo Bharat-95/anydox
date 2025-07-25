@@ -47,9 +47,10 @@ const Header = () => {
         className={`hidden md:flex lg:flex ${poppins.className} font-semibold text-base md:text-[17px] lg:text-[18px] text-white space-x-6 md:space-x-8 lg:space-x-10`}
       >
         <li><Link href="/">Home</Link></li>
+        <li><Link href="/about">About</Link></li>
         <li><Link href="/solutions">Solutions</Link></li>
         <li><Link href="/resources">Resources</Link></li>
-        <li><Link href="/about">About</Link></li>
+        
         <li><Link href="/contact">Contact Us</Link></li>
       </ul>
 
@@ -67,9 +68,10 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden absolute top-16 md:top-20 left-0 w-full bg-black/90 text-white px-6 py-5 flex flex-col space-y-5 text-base font-medium shadow-md">
           <Link href="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
+          <Link href="/about" onClick={() => setIsMenuOpen(false)}>About</Link>
           <Link href="/solutions" onClick={() => setIsMenuOpen(false)}>Solutions</Link>
           <Link href="/resources" onClick={() => setIsMenuOpen(false)}>Resources</Link>
-          <Link href="/about" onClick={() => setIsMenuOpen(false)}>About</Link>
+          
           <Link href="/contact" onClick={() => setIsMenuOpen(false)}>Contact Us</Link>
           <Link href="/" onClick={() => setIsMenuOpen(false)} className="mt-4 border border-white rounded-xl px-3 py-1.5 text-center text-sm">Let's talk</Link>
         </div>
