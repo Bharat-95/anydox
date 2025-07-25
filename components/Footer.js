@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FiMapPin, FiPhone, FiLinkedin, FiYoutube } from "react-icons/fi";
 
 export default function Footer() {
@@ -19,12 +20,6 @@ export default function Footer() {
                 xxxxxx
               </div>
             </div>
-            <div>
-              xxxx<br />
-              xxxxx<br />
-              xxxxxx<br />
-             xxxxxxx
-            </div>
             <div className="flex items-center">
               <FiPhone className="mr-2" />
               xxxxxxxxx
@@ -44,14 +39,8 @@ export default function Footer() {
         <div>
           <h3 className="font-semibold mb-3">Our Platform & Solutions</h3>
           <ul className="space-y-2 text-sm">
-            <li>Anydox.ai Platform</li>
-            <li>Product Suite</li>
-            <li>Instant Insights</li>
-            <li>Enterprise Insights</li>
-            <li>Actions</li>
-            <li>Comply360</li>
-            <li>Success Stories</li>
-            <li>Integrations</li>
+            <li><Link href='/'>Anydox.ai Platform</Link></li>
+            <li><Link href='/resources'>Integrations</Link></li>
           </ul>
         </div>
 
@@ -59,12 +48,7 @@ export default function Footer() {
         <div>
           <h3 className="font-semibold mb-3">Company</h3>
           <ul className="space-y-2 text-sm">
-            <li>About Us</li>
-            <li>Awards</li>
-            <li>Leadership</li>
-            <li>News & Press</li>
-            <li>Work With Us</li>
-            <li>Partners</li>
+            <li><Link href='/about'>About Us</Link></li>
           </ul>
         </div>
 
@@ -72,28 +56,16 @@ export default function Footer() {
         <div>
           <h3 className="font-semibold mb-3">Links</h3>
           <ul className="space-y-2 text-sm">
-            <li>Blog</li>
-            <li>Contact & Support</li>
-            <li>Book an Intro Call</li>
-            <li>Get Free Data Insights</li>
+            <li><Link href='/contact'>Contact & Support</Link></li>
+            <li> <Link href='/contact'>Book an Intro Call</Link></li>
+            <li><Link href='/contact'>Get Free Data Insights</Link></li>
           </ul>
-          <div className="mt-6">
-            <h4 className="font-semibold mb-2">Subscribe to Newsletter</h4>
-            <input
-              type="email"
-              placeholder="Email Address*"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md text-sm"
-            />
-            <button className="mt-3 bg-green-500 text-white px-4 py-2 rounded-md font-semibold text-sm hover:bg-green-600">
-              Subscribe!
-            </button>
-          </div>
         </div>
       </div>
 
       {/* Bottom line */}
       <div className="border-t border-gray-300 mt-10 pt-4 text-sm text-center">
-        © Copyright 2025 – Anydox.ai. All Rights Reserved. Designed and Developed by <a href='https://www.nandak.co'  className="text-green-600 underline" target="_blank" >Nandak Innovations Private Limited</a>
+        © Copyright 2025 – Anydox.ai. All Rights Reserved.
     
       </div>
     </footer>
