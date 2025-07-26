@@ -7,13 +7,10 @@ import IntegrationsSection from '@/components/Integrate'
 import Seperator from '@/components/Seperator'
 import Separator1 from '@/components/Seperator1'
 import Separator2 from '@/components/Seperator2'
-import Launching from '@/components/launching'
 
 const page = () => {
   return (
     <div>
-      <Launching />
-      {/*
     <Hero />
     <div className='z-10 relative'>
     <Seperator />
@@ -24,7 +21,7 @@ const page = () => {
     <Management />
     <Separator1 />
     <IntegrationsSection />
-    </div>*/}
+    </div>
     </div>
   )
 }

@@ -1,90 +1,116 @@
-"use client"
-import React, { useState } from 'react';
+"use client";
 
-export default function ContactUs() {
+import React, { useState } from "react";
+
+export default function BookIntroCall() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    company: "",
+    message: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Submitted:', formData);
+    console.log("Submitted:", formData);
     setSubmitted(true);
-
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
-
-    // Optionally send data to backend here
+    setFormData({ name: "", email: "", company: "", message: "" });
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4 lg:pt-[10%] md:pt-[10%] pt-[15%]">
-      <div className="bg-white rounded-xl shadow-lg p-6 w-full max-w-2xl">
-        <h2 className="text-2xl font-semibold text-center mb-6">Contact Us</h2>
-        {submitted ? (
-          <p className="text-green-600 text-center font-medium">
-            Thank you for contacting us!
+    <div className="min-h-screen bg-slate-900 text-white flex items-center justify-center px-4 py-20">
+      <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        {/* Left: Text Content */}
+        <div>
+          <h1 className="text-4xl font-bold mb-4">Book an Intro Call</h1>
+          <p className="text-lg mb-6 text-slate-300">
+            Learn how Anydox can streamline your document workflows using AI.
+            Get a live demo and answers to all your questions.
           </p>
-        ) : (
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Name</label>
-              <input
-                type="text"
-                name="name"
-                required
-                value={formData.name}
-                onChange={handleChange}
-                className="mt-1 w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
-              />
-            </div>
+          <ul className="list-disc ml-5 text-slate-300 mb-6 space-y-2">
+            <li>Understand our key features & benefits</li>
+            <li>Custom solution walkthrough for your use case</li>
+            <li>No sales pressure – just honest help</li>
+          </ul>
+          <p className="text-sm text-slate-500">
+            Takes less than 2 minutes to book.
+          </p>
+        </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Email</label>
-              <input
-                type="email"
-                name="email"
-                required
-                value={formData.email}
-                onChange={handleChange}
-                className="mt-1 w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
-              />
+        {/* Right: Form */}
+        <div className="bg-white text-slate-800 rounded-xl shadow-md p-8">
+          {submitted ? (
+            <div className="text-center text-green-600 font-medium text-lg">
+              ✅ Thanks for booking! We'll be in touch soon.
             </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div>
+                <label className="block text-sm font-medium mb-1">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600"
+                />
+              </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Message</label>
-              <textarea
-                name="message"
-                required
-                rows="5"
-                value={formData.message}
-                onChange={handleChange}
-                className="mt-1 w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
-              ></textarea>
-            </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600"
+                />
+              </div>
 
-            <div className="text-center">
+              <div>
+                <label className="block text-sm font-medium mb-1">Company (optional)</label>
+                <input
+                  type="text"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium mb-1">Message</label>
+                <textarea
+                  name="message"
+                  rows={4}
+                  required
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600"
+                />
+              </div>
+
               <button
                 type="submit"
-                className="bg-green-600 text-white font-semibold px-6 py-2 rounded-md hover:bg-green-700 transition-all"
+                className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded-md transition-all"
               >
-                Send Message
+                Book Intro Call
               </button>
-            </div>
-          </form>
-        )}
+            </form>
+          )}
+        </div>
       </div>
     </div>
   );

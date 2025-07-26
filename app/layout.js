@@ -21,9 +21,9 @@ export default function RootLayout({ children }) {
       <body
         className={` antialiased bg-cover bg-center bg-no-repeat bg-black`}     
       >
-  
+        <Header />  
         {children}
-
+        <Footer />
       </body>
     </html>
   );

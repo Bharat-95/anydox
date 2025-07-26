@@ -4,8 +4,10 @@ import { FaGlobe } from "react-icons/fa6";
 import { FaLock } from "react-icons/fa6";
 import { FaClockRotateLeft } from "react-icons/fa6";
 import { TiCloudStorageOutline } from "react-icons/ti";
-import Separator1 from "@/components/Seperator2";
 import Image from "next/image";
+import Separator3 from '@/components/Seperator3'
+import Separartor4 from '@/components/Seperator4'
+import Separator1 from '@/components/Seperator1'
 
 const page = () => {
   return (
@@ -104,14 +106,14 @@ const page = () => {
           </div>
         </section>
       </div>
-
+      <Separator3/>
       <div>
-        <section className="bg-slate-900 py-20 px-6 md:px-24 text-white">
+        <section className="bg-gray-100 py-20 px-6 md:px-24 text-gray-900">
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6">
               End-to-End Data Intelligence through AI-Led Discovery
             </h2>
-            <p className="text-lg text-slate-300 mb-12">
+            <p className="text-lg text-gray-900 mb-12">
               Anydox.ai transforms how organizations handle unstructured and
               scattered data—making it instantly discoverable, securely managed,
               and operationally valuable from the start.
@@ -153,6 +155,7 @@ const page = () => {
           </div>
         </section>
       </div>
+      <Separartor4 />
       <div>
         <section className="bg-white py-16 px-4 md:px-12 lg:px-24">
           <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
@@ -241,6 +244,7 @@ const page = () => {
           </div>
         </section>
       </div>
+      <Separator1 />
       <div>
         <section className="w-full py-16">
         <div className="max-w-4xl mx-auto text-center">

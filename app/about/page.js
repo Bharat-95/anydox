@@ -1,5 +1,8 @@
 import React from "react";
 import Seperator2 from "@/components/Seperator2";
+import Separator3 from "@/components/Seperator3";
+import Separator4 from "@/components/Seperator4";
+import Separator5 from '@/components/Seperator5'
 import Image from "next/image";
 import { FaHandshake, FaTrophy, FaLightbulb, FaUsers } from "react-icons/fa";
 
@@ -42,8 +45,9 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
+      <Separator3 />
 
-      <section className="w-full py-16">
+      <section className="w-full py-16 bg-gray-100 ">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
           <div className="relative w-full h-64 md:h-80 order-2 md:order-1">
             <Image
@@ -55,10 +59,10 @@ export default function AboutUs() {
             />
           </div>
           <div className="order-1 md:order-2">
-            <h2 className="text-3xl font-semibold mb-4 text-white">
+            <h2 className="text-3xl font-semibold mb-4 ttext-gray-900">
               Our Vision
             </h2>
-            <p className="text-white text-lg">
+            <p className="text-gray-900 text-lg">
               We envision a future where document handling is not a burden but a
               seamless part of everyday work—fueled by AI, accessible anywhere,
               and scalable to any need.
@@ -67,7 +71,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <Seperator2 />
+      <Separator4/>
 
       
       <section className="py-16 px-6 md:px-24 bg-white">
@@ -126,8 +130,8 @@ export default function AboutUs() {
         </div>
       </div>
     </section>
-
-    <section className="bg-white w-full py-16">
+    <Separator3 />
+    <section className="bg-gray-100 w-full py-16">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-semibold mb-10 text-center text-gray-900">
             Why Choose Anydox.ai?
@@ -159,6 +163,7 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
+      <Separator5 />
 
       <section className="w-full py-16">
         <div className="max-w-4xl mx-auto text-center">
