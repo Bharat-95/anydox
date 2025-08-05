@@ -7,11 +7,12 @@ import IntegrationsSection from '@/components/Integrate'
 import Seperator from '@/components/Seperator'
 import Separator1 from '@/components/Seperator1'
 import Separator2 from '@/components/Seperator2'
+import LaunchingSoon from '@/components/launching'
 
 const page = () => {
   return (
     <div>
-    <Hero />
+   {/*  <Hero />
     <div className='z-10 relative'>
     <Seperator />
     <Services />
@@ -22,6 +23,8 @@ const page = () => {
     <Separator1 />
     <IntegrationsSection />
     </div>
+    */}
+    <LaunchingSoon />
     </div>
   )
 }
