@@ -12,7 +12,7 @@ import LaunchingSoon from '@/components/launching'
 const page = () => {
   return (
     <div>
-   {/*  <Hero />
+    <Hero />
     <div className='z-10 relative'>
     <Seperator />
     <Services />
@@ -23,7 +23,7 @@ const page = () => {
     <Separator1 />
     <IntegrationsSection />
     </div>
-    */}
+    *
     <LaunchingSoon />
     </div>
   )
